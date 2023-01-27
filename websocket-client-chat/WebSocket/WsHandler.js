@@ -14,5 +14,4 @@ export class WsHandler extends WebSocket {
         }
     }
 
-    send;
 }
