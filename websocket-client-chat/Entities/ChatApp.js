@@ -14,29 +14,21 @@ export class ChatApp {
                 this.renderMessage(message);
             },
         });
-        this.form.addEventListener('submit', this.onFormSubmit);
+
+        this.form.addEventListener('submit', this.onFormSubmit.bind(this));
     }
 
     onFormSubmit(event) {
         event.preventDefault();
-        console.log(event);
 
         const inputsFormData = new FormData(event.target);
-        console.log(inputsFormData)
 
-        // const users = {
-        //     user: this.form.user.value,
-        //     message: this.form.message.value,
-        //     id: 1,
-        // };
         const users = {
             user: inputsFormData.get('user'),
             message: inputsFormData.get('message'),
             id: 1,
         };
-        console.log(users)
 
-        // this.chatDialog.send(users);
         this.chatDialog.sendMessageData(users);
     }
 
@@ -44,13 +36,12 @@ export class ChatApp {
 
         console.log(`User: ${user} Message: ${message}`);
 
-        // if (dialog.closest('ul')) {
+        if (this.chat.closest('ul')) {
         const html = `
             <li data-id="${id}">${user}: ${message}</li>`;
 
         this.chat.insertAdjacentHTML('afterbegin', html);
         this.form.reset();
-
-        // }
+        }
     }
 }
