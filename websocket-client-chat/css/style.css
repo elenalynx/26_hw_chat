@@ -11,7 +11,6 @@
 html, body {
     margin: 0;
     padding: 0;
-
 }
 
 button {
@@ -25,8 +24,6 @@ button {
 button:hover {
     background: #FFFFFF;
     color: #656565;
-    /*border: 1px solid #E3B7B5;*/
-    /*border-radius: 30px;*/
 }
 
 section {
@@ -43,13 +40,12 @@ section {
 
 .form-wrapper,
 .dialog-wrapper {
-    /*width: 100%;*/
     background-color: #FFFFFF;
     border: 3px solid #F1DBDA;
     border-radius: 30px;
-    /*gap: 5px;*/
-    /*display: flex;*/
-    /*justify-content: center;*/
+}
+
+.form-wrapper {
     padding: 50px 20px;
     margin: 10px;
 }
@@ -75,4 +71,20 @@ input {
 
 input[type="text"] {
     padding: 2px 8px;
+}
+
+.dialog-wrapper {
+    padding: 5px 20px;
+    height: 100px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+#chat-container {
+    padding: 0 5px;
+    margin: 2px;
+}
+
+#chat-container li {
+    margin-bottom: 8px;
 }

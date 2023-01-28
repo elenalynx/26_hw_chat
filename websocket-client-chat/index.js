@@ -49,6 +49,8 @@ function renderMessage( { user, message, id } ) {
     <li data-id="${id}">${user}: ${message}</li>`;
 
     dialog.insertAdjacentHTML('afterbegin', html);
+    form.reset();
+
     // }
 }
 
